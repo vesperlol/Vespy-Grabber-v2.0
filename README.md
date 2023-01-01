@@ -32,7 +32,7 @@ You can also modify the code in utils/
 
 <h3>Credits</h3>
 
-Credits to scel
+Credits to scel#7166
 
 vesper#0003 / @i_might_be_vesper
 
