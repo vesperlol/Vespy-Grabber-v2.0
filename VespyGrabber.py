@@ -451,7 +451,7 @@ class Menu:
             r=requests.get(self.webhook.get())
             if r.status_code == 200 or r.status_code == 204:
                 webhook = self.webhook.get()
-                name = self.name.get().replace(" ","")
+                name = self.name.get().replace(" ","_").replace(".","_")
                 if name == "Name":
                     name = "Default"
                 icon = self.icon.get()
