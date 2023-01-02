@@ -16,6 +16,14 @@ Vespy Logger but better fr. Part of vespy 2.0 project. This is a python open sou
 
 THIS IS ONLY THE FIRST RELEASE, IF YOU FIND ANY BUGS DM vesper#0003 ON DISCORD
 
+<h3>NEXT UPDATE</h3>
+
+- Multi tool
+
+- Options, such as music player, hide console, etc
+
+- More features
+
 <h3>How To Use</h3>
 
 You basically need a brain and python knowledge, this is the first step
