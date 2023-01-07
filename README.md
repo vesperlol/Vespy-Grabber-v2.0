@@ -18,6 +18,8 @@ THIS IS ONLY THE FIRST RELEASE, IF YOU FIND ANY BUGS DM vesper#0003 ON DISCORD
 
 <h3>NEXT UPDATE</h3>
 
+- Fixing Roblox Recovery (Not efficient enough)
+
 - Multi tool
 
 - Options, such as music player, hide console, etc
