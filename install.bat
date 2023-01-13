@@ -9,3 +9,4 @@ pip install pillow
 pip install discord_webhook
 pip install pyperclip
 pip install pyinstaller
+pip install chardet
