@@ -1,2 +1,5 @@
 https://streamable.com/l4uqww
 https://discord.gg/GGYmKcUDn9
+
+** ALSO **
+If you see any cmd.exe popup while opening VespyGrabber.py, just close them, some of the packages I use open cmds idfk why, ill fix that next update
