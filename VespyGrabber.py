@@ -516,7 +516,6 @@ class Menu:
 class Animation:
 
     def __init__(self):
-        Thread(target=initialize).start()
         self.img = __import__('PIL').Image.open('assets/epicanim.gif')
         self.LB = Label(window)
         self.LB.place(x=0,y=0,width=744,height=447)
